@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?yofr6z');
+  src:  url('../fonts/icomoon.eot?yofr6z#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?yofr6z') format('truetype'),
+    url('../fonts/icomoon.woff?yofr6z') format('woff'),
+    url('../fonts/icomoon.svg?yofr6z#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-send:before {
+  content: "\e902";
+}
+.icon-menu:before {
+  content: "\e903";
+}
+.icon-save:before {
+  content: "\e900";
+}
+.icon-share:before {
+  content: "\e901";
+}
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.left-navigation::-webkit-scrollbar {
+	width: ;
+}
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 25% 1fr;
+	height: 100vh;
+}
+
+h1,
+h2,
+h3, 
+h4 {
+	font-weight: normal;
+	color: #434a50;
+}
+
+/*//////////////////////////////////////
+
+		LEFT NAVIGATION
+
+//////////////////////////////////////*/
+
+.left-navigation {
+	background: #151b31;
+	color: #ddd;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+
+.logo,
+.play-list,
+.friends-play-list {
+	padding: 1em;
+}
+
+
+.logo {
+	width: 100%
+	margin: 1rem 0;
+}
+
+.logo img {
+	max-width: 100%;
+}
+
+.left-navigation h2 {
+	margin: 0 0 1em 0;
+	color: white;
+	font-size: 1.6em;
+}
+
+.list-item {
+	margin: 1.5em 2em;
+	list-style: disc;
+}
+
+.list-item a {
+	text-decoration: none;
+	color: #ddd;
+}
+
+.list-item a:hover {
+	color: white;
+}
+
+.friend:last-child {
+	margin-bottom: 5em;
+}
+
+.user a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #ddd;
+	margin: .7em 0;
+}
+
+.user h3 {
+	color: white;
+	font-size: 1em;
+	justify-content: center;
+	margin-left: .9em;
+}
+
+.user-image {
+	width: 50px;
+	border-radius: 50%;
+}
+
+.profile {
+	background: rgb(155 86 254);
+	padding: .5em 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 25%;
+	padding-left: 1em;
+}
+
+.hamburger-button {
+	position: fixed;
+	display: none;
+	top: 3%;
+	left: 85%;
+	z-index: 2;
+	width: max-content;
+	padding: 1em;
+	font-size: 1rem;
+	background-color: rgba(25,25,25,.9);
+	color: white; 
+	border-radius: 50%;
+}
+
+@media screen and (max-width: 1125px) {
+	main {
+		grid-template-columns: 1fr;
+	}
+
+	.left-navigation {
+		position: absolute;
+		left: -500vw;
+		width: 80%;
+		transition: 0.5s;
+	}
+
+	.logo img {
+		display: none;
+	}
+
+	.profile {
+		position: absolute;
+		width: 100%;
+	}
+
+	.is-active {
+		left: auto;
+	}
+
+	.hamburger-button {
+		display: block;
+	}
+}
+
+/*//////////////////////////////////////
+
+			CONTENT
+
+//////////////////////////////////////*/
+
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	overflow: scroll;
+	grid-template-areas: "video        video      "
+			   			 "info         info"
+			   			 "footer-video footer-video "                  
+			             "coments      suggestions";
+}
+
+.video {
+	grid-area: video;
+	/*height: 40vh;*/
+} 
+
+.video iframe {
+	width: 100%;
+}
+
+
+.footer-video {
+	grid-area: footer-video;
+	display: grid;
+	padding: 1em 0 2em;
+	grid-gap: 2em 0;
+	box-shadow: 0px 8px 16px -3px #BFBFBF;
+}
+
+.info {
+	grid-column: 1 / -1;
+}
+
+.video-title {
+	color: #434a50;
+	font-size: 1.7em;
+}
+
+.views {
+	color: #989898;
+	padding-top: .5em;
+	font-size: 1.4em;
+}
+
+.options {
+	display: flex;
+	grid-column: 1 / 2;
+}
+
+.options input {
+	background: linear-gradient(90deg, rgba(254,8,19,1) 0%, rgba(252,98,150,1) 100%);
+	color:white;
+	border: none;
+	padding: 1em 2em;
+	margin-right: 2rem;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.options a {
+	text-decoration: none;
+	color: #434a50;
+	margin: 0 2rem 0 0;
+	display: inline-block;
+	text-align: center;
+}
+
+.icon {
+	color: #434a50;
+	font-size: 1.5em;
+}
+
+.tags {
+	grid-area: tags;
+	align-content: end;
+	align-self: center;
+}
+
+.video-tag {
+	color: white;
+	margin-right: .7em; 
+	border-radius: 25px;
+	padding: .5em 1em;
+}
+
+.video-tag:nth-of-type(1) {
+	background: #9b56fe;
+}
+
+.video-tag:nth-of-type(2) {
+	background: #17e9c4;
+}
+
+.video-tag:nth-of-type(3) {
+	background: #e01622;
+}
+
+.video-tag:nth-of-type(4) {
+	background: #f02f82;
+}
+
+.footer-video {
+	padding-left: 1em;
+}
+
+.coments,
+.suggestions {
+	padding: 3em 2em;
+}
+
+.coments {
+	grid-area: coments;
+}
+
+.new-coment {
+	display: flex;	
+}
+
+.send-coment {
+	align-self: center;
+	height: max-content;
+	border: none;
+	background: #f2f2f2;
+	padding: 1em;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.icon-send {
+	font-size: 25px;
+	color: #434a50;
+}
+
+.add-coment {
+	background: #f2f2f2;
+	border: 1px solid #e6e6e6;
+	width: 100%;
+	background-image: url(https://avatars3.githubusercontent.com/u/36377522?s=460&u=3b1f554c19b5dc2e21bf0aef269f44ee5bf87fdf&v=4);
+	padding: 1em 1em 1em 80px;
+	background-repeat: no-repeat;
+	background-position-y: center;   
+	background-size: 50px;
+	padding-left: 50px;
+	margin: 2em 0;
+	font-size: 1em;
+	border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.coment {
+	display: flex;
+	align-items: center;
+	margin: 1em 0; 
+}
+
+.coment img {
+	margin-right: 5px;
+}
+
+.suggestions {
+	grid-area: suggestions;
+	justify-self: center;
+}
+
+.suggestion {
+	margin: 2em 0;
+}
+
+.suggestion h2 {
+	font-size: 1em;
+}
+
+.suggestion-image {
+	width: 400px;
+}
+
+.suggestion img {
+	width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+	.hero {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: "video"
+			   			 	 "footer-video "                  
+			             	 "coments"
+			             	 "suggestions";
+	}	
+
+	.suggestions {
+		display: grid;
+		grid-gap: 1rem;
+		
+		justify-self: initial;
+	}
+
+	.suggestions-list {
+		display: grid;
+    		grid-auto-flow: column;
+    		overflow: scroll;
+    		grid-gap: 1rem;
+
+	}
+
+
+}
+
+@media screen and (max-width: 767px) {
+	.tags {
+		grid-column: 1 / -1;
+	}
+
+}
